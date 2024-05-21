@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_rectangular.c                                :+:      :+:    :+:   */
+/*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 19:21:56 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/05/20 19:36:04 by mrechuli         ###   ########.fr       */
+/*   Created: 2024/05/21 19:07:56 by marvin            #+#    #+#             */
+/*   Updated: 2024/05/21 19:07:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H
 
-void	check_rectangular(char **map)
+# include "libs/libft/libft.h"
+# include "libs/printf/libftprintf.h"
+# include "libs/minilibx/mlx.h"
+# include <stdbool.h>
+
+typedef struct s_txt
 {
-	size_t	len;
-	short	x;
 
-	len = map_width(map[0]);
-	x = 1;
-	while (map[x])
-	{
-		if (map_width(map[x]) != len)
-			error(map, "The map must be rectangular!");
-		x++;
-	}
-}
+}   t_txt;
+
+typedef struct s_game
+{
+
+}   t_game;
+

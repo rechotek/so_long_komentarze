@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_rectangular.c                                :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 19:21:56 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/05/20 19:36:04 by mrechuli         ###   ########.fr       */
+/*   Created: 2024/05/21 19:31:59 by marvin            #+#    #+#             */
+/*   Updated: 2024/05/21 19:31:59 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	check_rectangular(char **map)
+void	error(char **map, char *msg)
 {
-	size_t	len;
-	short	x;
-
-	len = map_width(map[0]);
-	x = 1;
-	while (map[x])
-	{
-		if (map_width(map[x]) != len)
-			error(map, "The map must be rectangular!");
-		x++;
-	}
+	ft_printf("Error\n");
+	ft_printf("%s\n", msg);
+	if (map && map[0])
+		free_map(map);
+	exit(1);
 }
