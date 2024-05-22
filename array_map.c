@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   array_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:04:35 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/21 18:04:35 by marvin           ###   ########.fr       */
+/*   Updated: 2024/05/22 17:40:16 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char *read_map(int fd)
     return (str); // zwracam cala mape w postaci jednego stringa
 }
 
-// otwiera plik z mapa i odczytuje zawartosc. Na koniec zwraca tablice dwuwymiarowa, tablice z ciagami znakow, gdzie kazdy string odpowiada wierszwi mapy
+// otwiera plik z mapa i odczytuje zawartosc. Na koniec zwraca tablice dwuwymiarowa, tablice z ciagami znakow, gdzie kazdy string odpowiada wierszowi mapy
 
 char    **array_map(char *path)
 {
