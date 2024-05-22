@@ -6,7 +6,7 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 18:38:07 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/05/20 18:39:40 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:49:41 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void check_map(char **map)
 {
 	check_characters(map);
-	check_shape(map);
+	check_rectangular(map);
 	check_border(map);
 	check_way(map);
 }

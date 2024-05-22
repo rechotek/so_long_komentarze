@@ -6,7 +6,7 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 15:40:53 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/05/22 17:18:37 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:51:56 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	flood_fill(char **map, int height, int x, int y)
 		return ;
 	map[x][y] = 'X';
 	flood_fill(map, height, x, y - 1); // gora
-	floof_fill(map, height, x, y + 1); // dol
+	flood_fill(map, height, x, y + 1); // dol
 	flood_fill(map, height, x - 1, y); // lewo
 	flood_fill(map, height, x + 1, y); // prawo
 }

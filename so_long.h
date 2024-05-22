@@ -6,7 +6,7 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 19:07:56 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/22 17:33:30 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:52:59 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define SO_LONG_H
 
 # include "libs/libft/libft.h"
-# include "libs/printf/libftprintf.h"
+# include "libs/ft_printf/ft_printf.h"
 # include "libs/minilibx/mlx.h"
 # include <stdbool.h>
+# include <fcntl.h>
 
 // nazwy pol w strukturze nie moga sie zaczynac od cyfr, dlatego zmienilem 0 -> a i 1 -> w
 
@@ -46,3 +47,17 @@ typedef struct s_game
 	t_txt	txt;
 }   t_game;
 
+void	error(char **map, char *msg);
+void	free_map(char **map);
+char    **array_map(char *path);
+void	check_map(char **map);
+void	check_border(char **map);
+void    check_characters(char **map);
+void	check_rectangular(char **map);
+void	check_way(char **map);
+size_t	map_width(char *map);
+size_t	map_height(char **map);
+void	find_gps(char **map, short *p_pos, short *e_pos);
+bool	is_all_collected(char **map);
+
+#endif

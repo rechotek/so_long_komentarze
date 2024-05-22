@@ -14,8 +14,8 @@ LIB_DIRS = libs/libft libs/ft_printf libs/minilibx
 LIBS = ft ftprintf mlx Xext X11
 LDFLAGS_LIBS = $(addprefix -L, $(LIB_DIRS)) $(addprefix -l, $(LIBS))
 
-MINILIBX_REPO = https://github.com/42Paris/minilibx-linux.git
-MINILIBX_DIR = libs/minilibx
+##MINILIBX_REPO = https://github.com/42Paris/minilibx-linux.git
+##MINILIBX_DIR = libs/minilibx
 
 all: $(MINILIBX_DIR) $(LIBS) $(NAME)
 

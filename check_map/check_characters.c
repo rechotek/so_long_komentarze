@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chech_characters.c                                 :+:      :+:    :+:   */
+/*   check_characters.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 17:04:32 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/21 17:04:32 by marvin           ###   ########.fr       */
+/*   Updated: 2024/05/22 18:47:05 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,5 @@ void    check_characters(char **map)
     if (exits != 1)
         error(map, "Wrong number of exits! There can only be 1.");
     if (players != 1)
-        error(map, "Wrong number of players! There can only be 1.")
+        error(map, "Wrong number of players! There can only be 1.");
 }

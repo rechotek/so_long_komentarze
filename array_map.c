@@ -6,11 +6,11 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:04:35 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/22 17:40:16 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/22 18:32:54 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 // przeksztalca mape w jeden, polaczony ciag znakow
 
