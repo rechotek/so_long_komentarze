@@ -6,13 +6,15 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:36:00 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/23 18:30:06 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/23 19:06:45 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-// Umieszcza dana teksture w okreslonym miejscu w oknie gry.
+// Umieszcza dana teksture (obraz) w okreslonym miejscu w oknie gry. Aby to
+// zrobic musialem wczesneij zainicjalizowac teksture, czyli zmienic ja z pliku
+// na obraz w pliku start_game.
 // Przyjmuje strukture "game", wskaznik "txt" do pliku z tekstura,
 // oraz wspolrzedne "x" i "y", ktore odpowiadaja za miejsce na mapie.
 

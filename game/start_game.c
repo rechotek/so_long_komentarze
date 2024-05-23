@@ -6,13 +6,13 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:01:15 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/23 18:54:13 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/23 19:07:04 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-// Ta funkcja sluzy do inicjalizacji tekstur uzywanych w grze.
+// Ta funkcja sluzy do inicjalizacji tekstur uzywanych w grze. Czyli na zamianie pliku .xpm na obraz.
 // Kazde wywolanie mlx_xpm_file_to_image przyjmuje 4 argumenty:
 // - game->mlx - wskaznik to struktury zawierajacej biblioteke MinilibX
 // - "textures/0.xpm" - sciezka do pliku z tekstura
