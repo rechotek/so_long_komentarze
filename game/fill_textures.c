@@ -20,12 +20,13 @@
 
 static void	fill_texture(t_game game, void *txt, short x, short y)
 {
-	mlx_pu_image_to_window(game.mlx, game.window, txt, x, y);
+	mlx_put_image_to_window(game.mlx, game.window, txt, x, y);
 }
 
 // Ta funkcja wgrywa odpowiednia teksture dla gracza w zaleznosci od
 // tego, w ktora strone sie rusza. Czyli w zaleznosci od tego jaki
 // klawisz naciska.
+// w strukturze game.txt.pb jest przechowywany plik zmieniony na obraz
 
 static void	fill_player(t_game game, char key, short x, short y)
 {
@@ -42,7 +43,8 @@ static void	fill_player(t_game game, char key, short x, short y)
 // Jest to glowna funkcja. Iteruje ona przez cala mape i umieszcza odpowiednie
 // tekstury w oknie gry.
 // Tekstury znajduja sie w odpowiednich zmiennych w strukturach (np. game.txt.a),
-// bo zainicjowalem je w pliku start_game w funkcji init_textures 
+// bo zainicjowalem je w pliku start_game w funkcji init_textures
+// w strukturze game.txt.a jest przechowywany plik zmieniony na obraz
 
 void	fill_textures(t_game game, char key)
 {

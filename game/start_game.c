@@ -21,7 +21,7 @@
 // To wywolanie:
 // - laduje obraz z pliku "textures/0.xpm"
 // - przypisuje zaladowany obraz do pola 'a' struktury 'txt' w strukturze 'game'
-// - aktualizuje wartosc game->width i game->height do szerokosci i wysokosci zaladowanego obrazu (to znaczy, ze funkja odczytuje ta szerokosc i wysokosc z obrazu i przypisuje ja do odpowiednicj wskaznikow)
+// - aktualizuje wartosc game->width i game->height do szerokosci i wysokosci zaladowanego obrazu (to znaczy, ze funkja odczytuje ta szerokosc i wysokosc z obrazu i przypisuje ja do odpowiednich wskaznikow)
 
 static void	init_textures(t_game *game)
 {
@@ -34,10 +34,18 @@ static void	init_textures(t_game *game)
 	game->txt.pd = mlx_xpm_file_to_image(game->mlx, "textures/pd.xpm", &(game->width), &(game->height));
 	game->txt.pl = mlx_xpm_file_to_image(game->mlx, "textures/pl.xpm", &(game->width), &(game->height));
 	game->txt.pr = mlx_xpm_file_to_image(game->mlx, "textures/pr.xpm", &(game->width), &(game->height));
-
 }
 
+
+
 // Uruchamiam wszystkie funkcje, ktore sa niezbedne do rozpoczecia gry
+// HOOK - w kontekscie programowania to mechanizmy, ktore pozwalaja na zarejestrowanie
+// funkcji obslugujacych konkretne zdarzenia. Sa uzywane do rejestrowania funkcji,
+// ktore maja byc wywolane w odpowiedzi na rozne zdarzenia kienkowe, takie jak
+// nacisnie klawiszy, ruchy myszka, czy zamkniecie okna.
+// mlx_hook - uzywana do rejestrowania ogolnych zdarzen okienkowych
+// mlx_key_hook - uzywana do obslugi zdarzen klawiatury
+// mlx_mouse_hook - uzywana do obslugi zdarzen myszy
 
 void	start_game(t_game game) // game jest kopia struktury t_game
 {
@@ -49,5 +57,5 @@ void	start_game(t_game game) // game jest kopia struktury t_game
 	find_gps(game.map, game.p_pos, game.e_pos); // znajduje pozycje, w ktorej jest wyjscie i gracz na poczatku
 	init_textures(&game); // ta funkcja inicjalizuje tekstury. Odnosi sie ona do adresu &game, poniewaz tam sa zapisane niezbedne dane do inicjalizacji tekstur
 	fill_textures(game, 'w'); // ta funkcja wypelnia mape zainicjalizowanymi wyzej teksturami. Jako klucz jest podany 'w', poniewaz pierwszym polem do wypelnienia jest sciana, ktora oznaczylem jako 'w'
-	
+	mlx_hook(game.window, 17, 0, close_game, &game); // obsluguje dzialanie na oknie ktore ma sie wydarzyc; przyjmuje wskaznik do okna dla ktorego rejestruje obsluge zdarzenia (game.window); typ zdarzenia, ktore chcemy obsluzyc, czyli co ma sie zadziac (17 - zamkniecie okna); maska zdarzen (0 - poniewaz nie potrzebuje dodatkowego filtrowania zdarzenia, do wylaczenia okna wystarczy 0); wskaznik do funkcji wykonujacej to zdarzenie (close_game); dane potrzebne do wykonania tej funkcji (&game)
 }

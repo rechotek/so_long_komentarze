@@ -59,5 +59,6 @@ size_t	map_width(char *map);
 size_t	map_height(char **map);
 void	find_gps(char **map, short *p_pos, short *e_pos);
 bool	is_all_collected(char **map);
+void	fill_textures(t_game game, char key);
 
 #endif
