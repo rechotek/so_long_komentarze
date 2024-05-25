@@ -41,13 +41,13 @@ static void	init_textures(t_game *game)
 int	handle_key_events(int keycode, t_game *game)
 {
 	if (keycode == 65362) // jest to kod dla strzalki w gore
-		move_player(game, 0, -1, '↑');
+		move_player(game, -1, 0, '↑');
 	if (keycode == 65364)
-		move_player(game, 0, 1, '↓');
+		move_player(game, 1, 0, '↓');
 	if (keycode == 65361)
-		move_player(game, -1, 0, '←');
+		move_player(game, 0, -1, '←');
 	if (keycode == 65363)
-		move_player(game, 1, 0, '→');
+		move_player(game, 0, 1, '→');
 	if (keycode == 65307) // jest to kod dla ESC. Po jego nacisnieciu program ma sie zamknac
 		close_game(game);
 	return (0);

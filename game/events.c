@@ -1,8 +1,36 @@
 #include "../so_long.h"
 
-void	move_player(t_game *game, short x_off, short y_off, char key) // off pochodzi od offset. W tym kontekscie oznacza odsuniecie od od punktu odniesienia
-{
+// ta funkcja jest odpowiedzialna za przesuwanie gracza na mapie gry i aktualizowanie mapy
+// przyjmuje wskaznik do struktury game, gdzie sa niezbedne informacje
+// przesuniecie w kierunku "x" oraz "y"
+// symbol z klawiatury, po ktorego nacisnieciu wykonuje sie akcja
 
+void	move_player(t_game *game, short x_off, short y_off, char key) // off pochodzi od offset. W tym kontekscie oznacza odsuniecie od punktu odniesienia
+{
+	static short	moves = 0; // jest staic poniewaz chcemy aby liczba ruchow byla aktualizowana przy kazdym wywolaniu funkcji
+	short			new_row; // nowy rzad 
+	short			new_col; // nowa kolumna
+
+	new_row = game->p_pos[0] + x_off; // nowe polozenie postaci na osi x (czyli rzad mapy w ktorym sie znajduje po wykonaniu ruchu)
+	new_col = game->p_pos[1] + y_off; // nowe polozenie postaci na osi y (czyli kolumna mapy w ktorej sie znajduje po wykonaniu ruchu)
+	if (game->map[new_row][new_col] == '1') // sprawdzenie czy nowa pozycja gracza znajduje sie na planszy, po ktorej mozna sie poruszac; "1" oznacza sciane, czyli miejsce w ktore nie da sie wejsc
+		return ; // nie mozna zrobic takiego ruchu wiec przerywam dzialanie funkcji i natychmiast z niej wychodze
+	if (game->map[new_row][new_col] == 'T') // jesli nowa pozycja jest miejscem gdzie stoi wrog "M" ...
+		close_game(game); // ... to zamykamy gre bo zginelismy
+	moves++; // zliczam liczbe ruchow; w tym miejscu kodu, poniewaz nie chce jako ruch liczyc wejscia w sciane lub wroga
+	if (game->map) // jesli mapa istnieje ...
+		game->map[new_row][new_col] = 'P'; // ... to aktualizuje pozycje 'P' ustawiajac ja na nowe wspolrzedne
+	if (new_row == game->e_pos[0] && new_col == game->e_pos[1]) // jesli pozycja gracza jest taka sama jak pozycja wyjscia ...
+		if (is_all_collected(game->map)) // ... to jesli zebralismy wszystkie przedmioty ...
+			close_game(game); // ... to zamykamy gre
+	if (game->p_pos[0] == game->e_pos[0] && game->p_pos[1] == game->e_pos[1]) // jesli pozycja gracza, z ktorej wyszedl (czyli jakby przed ruchem, stara pozycja), znajduje sie na pozycji wyjscia ...
+		game->map[game->p_pos[0]][game->p_pos[1]] = 'E'; // ... to ustawiam ta pozycje na mapie na 'E'
+	else
+		game->map[game->p_pos[0]][game->p_pos[1]] = '0'; // ... w przeciwnym wypadku ustawiam ta pozycje na '0'; wtedy pozostawie '0' nadal '0', a jak zbiore 'C' to pozostawie je '0'
+	game->p_pos[0] = new_row; // uaktualniam pozycje gracza (dopiero teraz, zwroc na to uwage w kodzie!)
+	game->p_pos[1] = new_col;
+	fill_textures(*game, key); // nowe zaladowanie tekstur (bo mapa sie zmienila)
+	display_moves(game, moves); // wyswietlenie ruchow
 }
 
 // close_game odpowiada za zamkniecie okna z gra i zakonczenie dzialania programu

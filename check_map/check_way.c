@@ -28,13 +28,13 @@ static void	flood_fill(char **map, int height, int x, int y)
 
 	width = map_width(map[0]);
 	if (x < 0 || x >= height || y < 0 || y >= width
-		|| map[x][y] == '1' || map[x][y] == 'X' || map[x][y] == 'M') // M to wrog chyba
+		|| map[x][y] == '1' || map[x][y] == 'X' || map[x][y] == 'T') // T to wrog
 		return ;
 	map[x][y] = 'X';
-	flood_fill(map, height, x, y - 1); // gora
-	flood_fill(map, height, x, y + 1); // dol
-	flood_fill(map, height, x - 1, y); // lewo
-	flood_fill(map, height, x + 1, y); // prawo
+	flood_fill(map, height, x, y - 1); // lewo
+	flood_fill(map, height, x, y + 1); // prawo
+	flood_fill(map, height, x - 1, y); // gora
+	flood_fill(map, height, x + 1, y); // dol
 }
 
 // tworze duplikat mapy, aby moc ja swobodnie edytowac nie zmieniajac oryginalnej
