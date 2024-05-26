@@ -1,5 +1,17 @@
 #include "../so_long.h"
 
+// display_moves sluzy do wyswietlenia ilosci ruchow ktore wykonala postac, w oknie gry
+
+static void	display_moves(t_game *game, short moves)
+{
+	char	*str;
+
+	str = ft_itoa(moves); // zamienia liczbe "moves" na string' czyli zamieni liczbe 42 na string 42
+	mlx_string_put(game->mlx, game->window, 10, 20, 0xFFFFFFFF, "Moves: "); // napisze "Moves: " w oknie (game->window), w kolorze bialym (0xFFFFFFF), na pozycji x=10 i y=20
+	mlx_string_put(game->mlx, game->window, 70, 20, 0xFFFFFFFF, str); // dopisze do "Moves: " liczbe z wartosci "str" (juz w postaci stringa), w kolorze bialym, na pozycji x=70 i y=20
+	free(str); // uwalniam pamiec dla str, poniewaz wczesniej alokuje ja w funkcji ft_itoa
+}
+
 // ta funkcja jest odpowiedzialna za przesuwanie gracza na mapie gry i aktualizowanie mapy
 // przyjmuje wskaznik do struktury game, gdzie sa niezbedne informacje
 // przesuniecie w kierunku "x" oraz "y"
@@ -7,7 +19,7 @@
 
 void	move_player(t_game *game, short x_off, short y_off, char key) // off pochodzi od offset. W tym kontekscie oznacza odsuniecie od punktu odniesienia
 {
-	static short	moves = 0; // jest staic poniewaz chcemy aby liczba ruchow byla aktualizowana przy kazdym wywolaniu funkcji
+	static short	moves = 0; // jest static poniewaz chcemy aby liczba ruchow byla aktualizowana przy kazdym wywolaniu funkcji
 	short			new_row; // nowy rzad 
 	short			new_col; // nowa kolumna
 
