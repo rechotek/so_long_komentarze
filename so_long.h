@@ -6,7 +6,7 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 19:07:56 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/22 18:52:59 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/27 19:14:40 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	find_gps(char **map, short *p_pos, short *e_pos);
 bool	is_all_collected(char **map);
 void	fill_textures(t_game game, char key);
 void	move_player(t_game *game, short x_off, short y_off, char key);
-void	close_game(t_game *game);
+int		close_game(t_game *game);
+void	start_game(t_game game);
 
 #endif

@@ -6,16 +6,16 @@ RM = rm -f
 
 UTILS = utils.c error_free.c
 SRCS = so_long.c array_map.c check_map/check_map.c check_map/check_characters.c check_map/check_rectangular.c \
-		check_map/check_border.c check_map/check_way.c start_game/start_game.c start_game/fill_textures.c \
-		start_game/events.c $(UTILS)
+		check_map/check_border.c check_map/check_way.c game/start_game.c game/fill_textures.c \
+		game/events.c $(UTILS)
 OBJS = $(SRCS:.c=.o)
 
 LIB_DIRS = libs/libft libs/ft_printf libs/minilibx
 LIBS = ft ftprintf mlx Xext X11
 LDFLAGS_LIBS = $(addprefix -L, $(LIB_DIRS)) $(addprefix -l, $(LIBS))
 
-##MINILIBX_REPO = https://github.com/42Paris/minilibx-linux.git
-##MINILIBX_DIR = libs/minilibx
+MINILIBX_REPO = https://github.com/42Paris/minilibx-linux.git
+MINILIBX_DIR = libs/minilibx
 
 all: $(MINILIBX_DIR) $(LIBS) $(NAME)
 

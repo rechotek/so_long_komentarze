@@ -6,11 +6,11 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 19:15:11 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/22 17:00:35 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:20:48 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 // Liczymy tu szerokosc mapy. *map wskazuje na ciag znakow. Jesli policzymy
 // jego dlugosc to otrzymamy szerokosc mapy

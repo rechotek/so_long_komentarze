@@ -6,12 +6,17 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 18:00:44 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/05/22 18:43:28 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/27 19:04:26 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>

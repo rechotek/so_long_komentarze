@@ -6,7 +6,7 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 16:01:15 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/23 19:07:04 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/27 19:52:43 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ static void	init_textures(t_game *game)
 int	handle_key_events(int keycode, t_game *game)
 {
 	if (keycode == 65362) // jest to kod dla strzalki w gore
-		move_player(game, -1, 0, '↑');
+		move_player(game, -1, 0, 'w');
 	if (keycode == 65364)
-		move_player(game, 1, 0, '↓');
+		move_player(game, 1, 0, 's');
 	if (keycode == 65361)
-		move_player(game, 0, -1, '←');
+		move_player(game, 0, -1, 'a');
 	if (keycode == 65363)
-		move_player(game, 0, 1, '→');
+		move_player(game, 0, 1, 'd');
 	if (keycode == 65307) // jest to kod dla ESC. Po jego nacisnieciu program ma sie zamknac
 		close_game(game);
 	return (0);
@@ -72,7 +72,7 @@ void	start_game(t_game game) // game jest kopia struktury t_game
 	find_gps(game.map, game.p_pos, game.e_pos); // znajduje pozycje, w ktorej jest wyjscie i gracz na poczatku
 	init_textures(&game); // ta funkcja inicjalizuje tekstury. Odnosi sie ona do adresu &game, poniewaz tam sa zapisane niezbedne dane do inicjalizacji tekstur
 	fill_textures(game, 'w'); // ta funkcja wypelnia mape zainicjalizowanymi wyzej teksturami. Jako klucz jest podany 'w', poniewaz pierwszym polem do wypelnienia jest sciana, ktora oznaczylem jako 'w'
-	mlx_hook(game.window, 17, 0, close_game, &game); // obsluguje dzialanie na oknie ktore ma sie wydarzyc; przyjmuje wskaznik do okna dla ktorego rejestruje obsluge zdarzenia (game.window); typ zdarzenia, ktore chcemy obsluzyc, czyli co ma sie zadziac (17 - zamkniecie okna); maska zdarzen (0 - poniewaz nie potrzebuje dodatkowego filtrowania zdarzenia, do wylaczenia okna wystarczy 0); wskaznik do funkcji wykonujacej to zdarzenie (close_game); dane potrzebne do wykonania tej funkcji (&game)
+	mlx_hook(game.window, 17, 0, close_game, &game); // obsluguje dzialanie na oknie ktore ma sie wydarzyc; przyjmuje wskaznik do okna dla ktorego rejestruje obsluge zdarzenia (game.window); typ zdarzenia, ktore chcemy obsluzyc, czyli co ma sie zadziac (17 - zamkniecie okna); maska zdarzen (0 - poniewaz nie potrzebuje dodatkowego filtrowania zdarzenia, do wylaczenia okna wystarczy 0); wskaznik do funkcji wykonujacej to zdarzenie (close_game);dane potrzebne do wykonania tej funkcji (&game)
 	mlx_key_hook(game.window, handle_key_events, &game); // obsluguje zdarzenia klawiaturowe dla danego okna; przyjmuje wskaznik na strukture reprezentujaca okno (game.window); funkcje gdzie zapisana jest obsluga klawiszy (handle_key_events); adres do danych, ktore sa niezbedne do wykonania funkcji (&game)
 	mlx_loop(game.mlx);
 }

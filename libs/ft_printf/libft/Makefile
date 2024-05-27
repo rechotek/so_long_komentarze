@@ -34,6 +34,7 @@ files 	   = ft_strlen \
 			 ft_putstr_fd \
 			 ft_putendl_fd \
 			 ft_putnbr_fd \
+			 get_next_line \
 
 Compiler	= gcc
 
@@ -54,6 +55,7 @@ $(NAME):
 all: $(NAME)
 
 clean:
+	rm -f $(NAME)
 	rm -f $(OFILES)
 
 fclean: clean

@@ -6,11 +6,11 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 19:31:59 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/22 18:35:43 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/27 18:21:33 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void	free_map(char **map)
 {
@@ -19,7 +19,7 @@ void	free_map(char **map)
 	x = 0;
 	while (map[x]) // free_map przyjmuje **map, czyli wskaznik do tablicy wskaznikow; wystarczy wiec ze zwolnie pamiec dla kazdego wskaznika z tablicy, na ktora kieruje wskaznik
 	{
-		free(map[x])
+		free(map[x]);
 		x++;
 	}
 	free(map);
