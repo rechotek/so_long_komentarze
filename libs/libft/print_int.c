@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   print_int.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 15:08:19 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/03/09 15:24:59 by mrechuli         ###   ########.fr       */
+/*   Created: 2024/03/14 15:56:36 by mrechuli          #+#    #+#             */
+/*   Updated: 2024/05/28 17:34:09 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Służy do wypisywania łańcucha znaków *s na określony deskryptor pliku fd
-// (np. konsola). 
-
 #include "libft.h"
-//#include "ft_strlen.c"
 
-void	ft_putstr_fd(char *s, int fd)
+int	print_int(int n)
 {
-	write (fd, s, ft_strlen(s));
+	int				nb;
+	unsigned int	x;
+
+	nb = n;
+	x = 1;
+	if (n < 0 && n != -2147483648)
+	{
+		nb = -n;
+		x++;
+	}
+	while (nb >= 10)
+	{
+		nb = nb / 10;
+		x++;
+	}
+	ft_putnbr_fd(n, 1);
+	if (n == -2147483648)
+		return (11);
+	return (x);
 }
 
 // int	main(void)
 // {
-// 	char	*s = "Hello World!\n";
-// 	int		fd = STDOUT_FILENO;
-
-// 	ft_putstr_fd(s, fd);
+// 	int	n = -2147483647;
+// 	printf(" Dlugosc: %d", print_int(n));
 // 	return (0);
 // }

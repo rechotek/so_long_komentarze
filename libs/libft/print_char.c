@@ -6,12 +6,11 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 18:49:25 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/03/20 17:47:18 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/28 17:33:58 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "./libft/libft.h"
+#include "libft.h"
 
 int	print_char(char c)
 {

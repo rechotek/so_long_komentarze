@@ -6,12 +6,11 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:45:46 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/03/21 17:05:15 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/28 17:34:21 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "./libft/libft.h"
+#include "libft.h"
 
 static void	printout(unsigned int nb)
 {

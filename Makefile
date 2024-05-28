@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/28 16:26:39 by mrechuli          #+#    #+#              #
+#    Updated: 2024/05/28 17:29:19 by mrechuli         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 MAKEFLAGS += -s
 NAME = so_long
 CC = cc
@@ -10,8 +22,8 @@ SRCS = so_long.c array_map.c check_map/check_map.c check_map/check_characters.c 
 		game/events.c $(UTILS)
 OBJS = $(SRCS:.c=.o)
 
-LIB_DIRS = libs/libft libs/ft_printf libs/minilibx
-LIBS = ft ftprintf mlx Xext X11
+LIB_DIRS = libs/libft libs/minilibx
+LIBS = ft mlx Xext X11
 LDFLAGS_LIBS = $(addprefix -L, $(LIB_DIRS)) $(addprefix -l, $(LIBS))
 
 MINILIBX_REPO = https://github.com/42Paris/minilibx-linux.git

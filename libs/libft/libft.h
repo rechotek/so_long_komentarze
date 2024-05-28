@@ -63,5 +63,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	**ft_split(char const *s, char c);
 char	*get_next_line(int fd);
+int	ft_printf(const char *input, ...);
+int	print_char(char c);
+int	print_hex(unsigned int value, int asc);
+int	print_int(int n);
+int	print_pointer(unsigned long value, int asc);
+int	print_string(char *s);
+int	print_unsigned_int(unsigned int nb);
 
 #endif

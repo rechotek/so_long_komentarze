@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_hex.c                                        :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 16:23:31 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/03/21 15:53:35 by mrechuli         ###   ########.fr       */
+/*   Created: 2024/03/14 15:57:12 by mrechuli          #+#    #+#             */
+/*   Updated: 2024/05/28 17:34:13 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "./libft/libft.h"
+#include "libft.h"
 // #include "print_string.c"
 // #include "print_char.c"
 
-static char	*create_hex(unsigned int value, int *xptr)
+static char	*create_hexy(unsigned long value, int *xptr)
 {
 	int				x;
-	unsigned int	tempvalue;
+	unsigned long	tempvalue;
 	char			*str;
 
 	x = 0;
@@ -33,7 +32,7 @@ static char	*create_hex(unsigned int value, int *xptr)
 	return (str);
 }
 
-static char	hex_digit(unsigned int digit, int asc)
+static char	hexy_digit(unsigned long digit, int asc)
 {
 	if (digit < 10)
 		return (digit + 48);
@@ -41,37 +40,38 @@ static char	hex_digit(unsigned int digit, int asc)
 		return (digit + asc);
 }
 
-int	print_hex(unsigned int value, int asc)
+int	print_pointer(unsigned long value, int asc)
 {
-	unsigned int	tempvalue;
+	unsigned long	tempvalue;
 	char			*printout;
 	int				x;
 	int				*xptr;
 
 	xptr = &x;
 	tempvalue = value;
-	printout = create_hex(value, xptr);
+	printout = create_hexy(value, xptr);
 	if (printout == NULL)
 		return (0);
 	while (tempvalue != 0 && x >= 0)
 	{
-		printout[x] = hex_digit(tempvalue % 16, asc);
+		printout[x] = hexy_digit(tempvalue % 16, asc);
 		tempvalue /= 16;
 		x--;
 	}
 	x = ft_strlen(printout);
+	if (value == 0)
+		x += print_string("(nil)");
+	else
+		x = x + print_string("0x");
 	ft_putstr_fd(printout, 1);
 	free(printout);
-	if (value == 0)
-		x += print_char('0');
 	return (x);
 }
 
-// int	main(void)
-// {
-//     unsigned int	value = 45516;
-//     int				asc = 87;
+// int main() {
+//     unsigned long value = 14;
+//     int asc = 87;
 
-// 	printf(" Dlugosc: %d", print_hex(value, asc));
+// 	printf(" Dlugosc: %d", print_pointer(value, asc));
 //     return (0);
 // }

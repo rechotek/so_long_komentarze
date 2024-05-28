@@ -6,7 +6,7 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 19:07:56 by marvin            #+#    #+#             */
-/*   Updated: 2024/05/27 19:14:40 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/28 17:29:54 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define SO_LONG_H
 
 # include "libs/libft/libft.h"
-# include "libs/ft_printf/ft_printf.h"
 # include "libs/minilibx/mlx.h"
 # include <stdbool.h>
 # include <fcntl.h>

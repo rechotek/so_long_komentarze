@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_int.c                                        :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 15:56:36 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/03/20 17:52:17 by mrechuli         ###   ########.fr       */
+/*   Created: 2024/03/14 15:57:52 by mrechuli          #+#    #+#             */
+/*   Updated: 2024/05/28 17:34:17 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "./libft/libft.h"
+#include "libft.h"
 
-int	print_int(int n)
+int	print_string(char *s)
 {
-	int				nb;
 	unsigned int	x;
 
-	nb = n;
-	x = 1;
-	if (n < 0 && n != -2147483648)
+	x = 0;
+	if (s == NULL)
 	{
-		nb = -n;
-		x++;
+		ft_putstr_fd("(null)", 1);
+		return (6);
 	}
-	while (nb >= 10)
-	{
-		nb = nb / 10;
+	while (s[x] != '\0')
 		x++;
-	}
-	ft_putnbr_fd(n, 1);
-	if (n == -2147483648)
-		return (11);
+	ft_putstr_fd(s, 1);
 	return (x);
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	int	n = -2147483647;
-// 	printf(" Dlugosc: %d", print_int(n));
-// 	return (0);
+//     char str[] = "Essa^$&*7683mordo!";
+//     printf("; Dlugosc stringu \"%s\": %d\n", str, print_string(str));
+//     return (0);
+// }
+
+// int main(void)
+// {
+//     char *str = NULL;
+//     printf(" NULL %d NULL", print_string(str));
+//     return (0);
 // }
