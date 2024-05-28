@@ -6,7 +6,7 @@
 /*   By: mrechuli <mrechuli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 15:40:53 by mrechuli          #+#    #+#             */
-/*   Updated: 2024/05/22 18:51:56 by mrechuli         ###   ########.fr       */
+/*   Updated: 2024/05/28 18:31:58 by mrechuli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	flood_fill(char **map, int height, int x, int y)
 	size_t	width;
 
 	width = map_width(map[0]);
-	if (x < 0 || x >= height || y < 0 || y >= width
+	if (x < 0 || x >= height || y < 0 || y >= width // sprawdzam czy aktualna pozycja nie jest poza mapa, nie jest '1', 'X' lub 'T'
 		|| map[x][y] == '1' || map[x][y] == 'X' || map[x][y] == 'T') // T to wrog
 		return ;
 	map[x][y] = 'X';
